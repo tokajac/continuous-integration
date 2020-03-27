@@ -20,7 +20,7 @@ public class HandleBasicCallController {
     public @ResponseBody
     BasicResponse handleBasicFeature(@RequestBody BasicCallBody couponSubmission) {
 
-        LOG.info( "HandleBasicCallController->handleBasicFeature" );
+        LOG.info( "HandleBasicCallController->handleBasicFeature->change" );
 
         return new BasicResponse();
     }
