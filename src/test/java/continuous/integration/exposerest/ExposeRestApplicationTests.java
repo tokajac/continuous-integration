@@ -10,4 +10,9 @@ class ExposeRestApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	public void testHandling(){
+
+	}
+
 }
