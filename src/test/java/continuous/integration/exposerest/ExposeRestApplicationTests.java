@@ -22,10 +22,6 @@ class ExposeRestApplicationTests extends AbstractTestNGSpringContextTests {
 
 	private MockMvc mockMvc;
 
-	@Test
-	void contextLoads() {
-	}
-
 	@BeforeClass
 	public void setup() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
