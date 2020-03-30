@@ -31,7 +31,7 @@ class ExposeRestApplicationTests extends AbstractTestNGSpringContextTests {
 	public void testHandling() throws Exception {
 		String postBodyString = "{\"email\":\"test@test.com\",\"customCode\":\"custom\"}";
 
-		mockMvc.perform( post( "http://localhost:8080/basicConsume" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) ).andExpect( status().isOk() );
+		mockMvc.perform( post( "/basicConsume" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) ).andExpect( status().isOk() );
 	}
 
 	@Test
@@ -40,6 +40,6 @@ class ExposeRestApplicationTests extends AbstractTestNGSpringContextTests {
 
 		mockMvc.perform( post( "/basicConsume" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) )
 				.andExpect( status().isOk() )
-				.andExpect( jsonPath("$.message").value("wrong") );
+				.andExpect( jsonPath("$.message").value("right") );
 	}
 }

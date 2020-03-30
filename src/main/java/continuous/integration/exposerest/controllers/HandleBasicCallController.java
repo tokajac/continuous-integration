@@ -22,6 +22,6 @@ public class HandleBasicCallController {
 
         LOG.info( "HandleBasicCallController->handleBasicFeature->change" );
 
-        return new BasicResponse();
+        return new BasicResponse( true, "right" );
     }
 }
