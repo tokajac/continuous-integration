@@ -40,6 +40,6 @@ class ExposeRestApplicationTests extends AbstractTestNGSpringContextTests {
 
 		mockMvc.perform( post( "/basicConsume" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) )
 				.andExpect( status().isOk() )
-				.andExpect( jsonPath("$.message").value("right") );
+				.andExpect( jsonPath("$.message").value("wrong") );
 	}
 }
