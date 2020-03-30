@@ -33,16 +33,16 @@ class ExposeRestApplicationTests extends AbstractTestNGSpringContextTests {
 
 	@Test
 	public void testHandling() throws Exception {
-		String postBodyString = "{\"email\":\"test@test.com\",\"couponCode\":\"12football\",\"firstName\":\"first\",\"lastName\":\"last\",\"countryName\":\"Hungary\",\"age\":38,\"address\":\"SomeCity zipCode SomeStreet houseNo\"}";
+		String postBodyString = "{\"email\":\"test@test.com\",\"customCode\":\"custom\"}";
 
-		mockMvc.perform( post( "/receiveCoupon" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) ).andExpect( status().isOk() );
+		mockMvc.perform( post( "/basicConsume" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) ).andExpect( status().isOk() );
 	}
 
 	@Test
 	public void testBasicFailure() throws Exception {
-		String postBodyString = "{\"email\":\"test@test.com\",\"couponCode\":\"12football\"}";
+		String postBodyString = "{\"email\":\"test@test.com\",\"customCode\":\"custom\"}";
 
-		mockMvc.perform( post( "/receiveCoupon" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) )
+		mockMvc.perform( post( "/basicConsume" ).content( postBodyString ).contentType(MediaType.APPLICATION_JSON) )
 				.andExpect( status().isOk() )
 				.andExpect( jsonPath("$.message").value("wrong") );
 	}
